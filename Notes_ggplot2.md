@@ -83,3 +83,13 @@ ggplot(data = penguins) +
 ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point() +
   labs(title = "引擎排放量與油耗的散布圖") + theme_minimal()
 ```
+
+# 保存圖片
+
+```
+p <- ggplot(mtcars, aes(x = mpg, y = wt)) + geom_point()
+
+ggsave("my_photo.png", plot = p, width = 8, height = 6) # 保存為PNG檔
+
+ggsave("my_photo.pdf", plot = p)
+```
