@@ -91,5 +91,5 @@ p <- ggplot(mtcars, aes(x = mpg, y = wt)) + geom_point()
 
 ggsave("my_photo.png", plot = p, width = 8, height = 6) # 保存為PNG檔
 
-ggsave("my_photo.pdf", plot = p)
+ggsave("my_photo.pdf", plot = p) # 保存為PDF檔
 ```
