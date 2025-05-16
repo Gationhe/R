@@ -54,4 +54,32 @@ ggplot(data = economics, aes(x = date, y = unemploy)) + geom_line(color = "black
 ```
 
 # facet_wrap()、facet_grid()、theme()
+## facet
+to display smaller groups, or subsets, of the data. A facet is a side or section of an object, like the sides of a gemstone (寶石).
+- facet_wrap: 一個變數分類
+- facet_grid: 兩個變數交叉分組
 
+```
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color=species)) +
+  facet_wrap(~species) + 
+  theme(axis.text.x = element_text(angle = 45)) # x軸標籤轉45度
+```
+
+```
+ggplot(data = penguins) +
+  geom_point(mapping = aes(x = flipper_length_mm, y = body_mass_g, color=species)) +
+  facet_grid(sex~species)
+```
+
+備註：data = penguins需要載入palmerpenguins package
+
+## theme
+美化自訂圖表的標題、邊界、字型等
+- theme_minimal()
+- theme_classic()
+
+```
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point() +
+  labs(title = "引擎排放量與油耗的散布圖") + theme_minimal()
+```
